@@ -1,32 +1,5 @@
 <html>
 
-<script>
-
-    const apiKey = "yNOgIHnWIXj1amu4-csBDmUT2j7P5TLzj9xERO_mMoo";
-
-    fetch(`https://api.unsplash.com/photos/random?query=nature&client_id=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-
-        const imageurl = data.urls.regular;
-
-        document.querySelector('.hero-image').src = imageurl;
-
-    })
-    .catch(error => console.log('Error fetching image:', error));
-
- 
-
-
-fetchNewImage();
-
-
-setInterval(fetchNewImage, 10000); 
-
-
-</script>
-
-
 
 <head>
     <title> Circle Hub </title>
@@ -44,24 +17,19 @@ setInterval(fetchNewImage, 10000);
         <a href="#Sell">Sell</a>
         <div class="search-bar">
     <input type="text" placeholder="Search for products...">
-    <a href="#Login">Login</a>
+    <a id="login" href="#Login">Login</a>
     
 </div>
     </nav>
 
 
+<div>
 
 
 
 
-<div id="hero">
-    <img src="" alt="Hero Image" class="hero-image">
-    <h1>Welcome to Circle Hub</h1>
-    <p> your trusted marketplace for buying and selling</p>
 
-    
 </div>
-
 
 <div id="products">
     <div class="product-card">
