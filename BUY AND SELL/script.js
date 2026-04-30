@@ -30,6 +30,24 @@ const phoneData = [
     }
 ];
 
+let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+
+function addToCart(phoneName, price) {
+    const item = { name: phoneName, price: price };
+
+    cart.push(item);
+
+    localStorage.setItem("userCart", JSON.stringify(cart));
+
+    alert(phoneName + "added to cart!");
+    console.log("Curent Cart:", cart);
+
+
+
+}
+
+
+
 
 phoneData.forEach((phone) => {
     const card = document.createElement("div");
@@ -41,7 +59,7 @@ phoneData.forEach((phone) => {
     <p>₱${phone.price}</p>
     <p>${phone.condition}</p>
     <p>${phone.description}</p>
-    <button class="add-to-cart-btn" data-phone-name="${phone.phone}"data-phone-price="${phone.price}"> Add to Cart</button>
+    <button class="add-to-cart-btn" data-phone-name="${phone.phone}" data-phone-price="${phone.price}"> Add to Cart</button>
     
 `;
     
@@ -54,9 +72,11 @@ phoneData.forEach((phone) => {
 
 
 
-const addToCartButton = document.querySelectorAll(`.add-to-cart-btn`);
+ const addToCartButton = document.querySelectorAll(`.add-to-cart-btn`);
 
-addToCartButton.forEach((buton) => {
+addToCartButton.forEach((button) => {
+    button.addEventListener(`click`, function() {
+
     const phoneName = this.getAttribute(`data-phone-name`);
     const phonePrice = this.getAttribute(`data-phone-price`);
 
@@ -72,10 +92,10 @@ addToCartButton.forEach((buton) => {
     localStorage.setItem(`cartData`, JSON.stringify(cart));
 
     console.log(`Cart updated:`, cart);
-    alert('${phoneName} added to cart!');
+    alert(`${phoneName} added to cart!`);
 
 });
 
 
-
-
+    
+});
