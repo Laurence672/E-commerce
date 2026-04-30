@@ -1,8 +1,11 @@
 :root {
     --primary-yellow: #e9da89;
     --light-yellow: rgba(255, 215, 0, 0.1);
-    --background-yellowish: rgba(255, 255, 255, 0.2);
-    --backgound-grey: rgba(75, 71, 71, 0.1);
+    --background-yellowish: rgba(194, 194, 194, 0.2);
+    --background-grey: rgba(26, 23, 23, 0.1);
+    --button: #f8ec9b;
+
+    
     
 }
 
@@ -18,16 +21,8 @@ body {
 }
 
 button {
-    background-color: var(--backgound-grey)
-}
+    background-color: var(--backgound-grey);
 
-
-#main-nav {
-    background-color: rgb(255, 255, 255) ;
-    padding: 10px;
-    display: flex;
-    gap: 20px;
-    
 }
 
 
@@ -38,24 +33,39 @@ button {
     margin-left: 10px;
 }
 
+#main-nav {
+    background-color: rgb(231, 229, 229) ;
+    padding: 8px;
+    margin: 16px auto;
+    gap: 16px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    
+    
+}
+
+
+
 
 #main-nav a {
     color: #000000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px 15px;
-    border-radius: 10px;
+    padding: 10px 12px;
     backdrop-filter: blur(10px);
     transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
  
 #main-nav a:hover {
-    color: #ff6565;
+    color: #c2bdbd;
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
+    
     
 }
 
@@ -106,14 +116,14 @@ button {
 }
 
 .search-bar {
-    margin-left: 400px;
+    margin-left: auto;
     display: flex;
     gap: 10px;
     
 }
 
 .search-bar input {
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 12px 15px;
     font-size: 18px;
     border: 1px solid #ccc;
@@ -122,7 +132,33 @@ button {
 
 }
 
+#login {
+    color:#000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--backgound-grey);
 
+
+
+}
+    
+
+#login:hover {
+    color: #ff6565;
+    transform:scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: black;
+    
+
+}
 
 #products {
     display: grid;
@@ -132,25 +168,65 @@ button {
     max-width: 1200px;
     margin: 0 auto;
 
-
 }
 
 .product-card {
-    background: rgb(255, 251, 251);
+    background: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+
+.product-card p {
+    flex-grow: 1;
 
 }
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
 
 .product-card img {
     width: 100%;
     height: 200px;
-    object-fit: stretch;
+    object-fit: contain;
     border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+
+
 }
 
-.product :hover {
-    transform: scale(1.05);
+.product-card button {
+    background-color: var(--primary-yellow);
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
     transition: 0.3s;
+    width: 100%;
+    margin-top: auto;
+
+}
+
+
+.product-card button:hover {
+    background-color: var(--button);
+    color: white;
+    transform: scale(1.02);
+
+
 }
